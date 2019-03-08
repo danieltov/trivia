@@ -1,6 +1,6 @@
 let trivia = [
     {
-        question: `Tarantino's films have identifying characteristics according to film critics.Which of these would NOT be?`,
+        question: `Tarantino's films have identifying characteristics according to film critics. Which of these would NOT be one?`,
         choices: {
             a: `Ensemble casts`,
             b: `Non-linear time`,

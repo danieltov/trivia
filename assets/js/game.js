@@ -44,13 +44,18 @@ questionIndex = 0
 */
 
 let game = {
-    counter: 30,
+    counter: undefined,
     correct: undefined,
     incorrect: undefined,
     questionIndex: undefined,
     timer: undefined,
     start: function() {
-        this.startTimer();
+        this.counter = 30;
+        this.correct = 0;
+        this.incorrect = 0;
+        this.questionIndex = 0;
+        // this.startTimer();
+        this.printQuestion(this.questionIndex);
     },
     startTimer: function() {
         this.timer = setInterval(function() {
@@ -66,5 +71,15 @@ let game = {
     countDown: function() {
         this.counter--;
         return this.counter;
+    },
+    printQuestion: function(i) {
+        /* Handlebars stuff */
+        let source = $('#questionTemplate').html();
+        let template = Handlebars.compile(source);
+        let context = trivia[i];
+        let html = template(context);
+        $('#question').append(html);
     }
 };
+
+game.start();

@@ -1,0 +1,25 @@
+.bg-image {
+    background: url(../images/header.jpg);
+    background-size: contain !important;
+}
+.text-shadow {
+    text-shadow: 1px 1px 15px black;
+}
+
+.rounded-corners {
+    border-radius: 25px;
+}
+
+.answer {
+    width: 50%;
+    transition: all 0.5s ease;
+}
+
+.answer:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+.border-bottom-none {
+    border-bottom: none;
+}

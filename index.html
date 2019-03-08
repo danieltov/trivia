@@ -1,39 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <head>
+        <title>Tarantino Trivia</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="../../../work/uvu/global/css/global.css" />
+        <link
+            rel="stylesheet"
+            href="../../../work/uvu/global/css/helpers.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../../work/uvu/global/css/component.css"
+        />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Raleway:400,600,700"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="bg-yellow">
+        <section
+            class="page-header jumbo fullbleed border-bottom-none bg-image"
+        >
+            <div class="container-fluid">
+                <header class="fullbleed-overlay contain text-invert">
+                    <h1
+                        class="text-center text-shadow uppercase font-weight-900 text-rajdhani text-72"
+                    >
+                        Tarantino Trivia
+                    </h1>
+                </header>
+            </div>
+        </section>
+        <div class="margin-60">
+            <div
+                class="box-shadow padding-20 bg-white display-flex flex-column justify-content-center align-items-center"
+                id="question"
+            >
+                <script id="questionTemplate" type="text/x-handlebars-template">
+                    <h2 class="text-center text-blue-6 font-weight-100">
+                        {{question}}
+                    </h2>
+                    {{#each choices}}
+                    <p
+                        class="answer bg-red text-center box-shadow padding-10 rounded-corners"
+                    >
+                        <b class="uppercase">{{@key}}:</b> {{this}}
+                    </p>
+                    {{/each}}
+                </script>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.js"></script>
+        <script src="assets/js/questions.js"></script>
+        <script src="assets/js/game.js"></script>
+    </body>
 </html>
