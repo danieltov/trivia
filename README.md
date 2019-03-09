@@ -9,4 +9,4 @@ The instructions are simple:
 
 ## Good Luck!
 
-#### This little app was handcrafted in JavaScript and its bastard child, jQuery. Some support provided by the Bootstrap CSS, but mostly this is styled with vanilla CSS3.
+#### This little app was handmade in JavaScript and its bastard child, jQuery. Some support provided by the Bootstrap CSS, but mostly this is styled with vanilla CSS3.
