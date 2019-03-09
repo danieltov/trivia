@@ -73,8 +73,13 @@ let game = {
             $('main').html(
                 `<div style="background: #00688c;"><h3>That's the end of the game. You got ${
                     game.correct
-                } questions correct and ${game.incorrect} incorrect.</h3></div>`
+                } questions correct and ${
+                    game.incorrect
+                } incorrect.</h3><button class="btn btn-lg btn-block bg-warning" id="playAgain">Play Again</button></div>`
             );
+            $('#playAgain').on('click', function() {
+                game.start();
+            });
         }
     }
 };
