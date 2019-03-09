@@ -1,25 +1,73 @@
-.bg-image {
+/* ======== Page Styles ======== */
+
+body {
     background: url(../images/header.jpg);
-    background-size: contain !important;
-}
-.text-shadow {
-    text-shadow: 1px 1px 15px black;
+    background-size: 50%;
 }
 
-.rounded-corners {
-    border-radius: 25px;
+header {
+    padding: 60px 40px;
+}
+
+h1,
+h3 {
+    font-family: 'Rajdhani', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    text-shadow: 0.2rem 0.4rem 0.4rem black;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+main > div {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex: 0 1 100%;
+    flex-direction: column !important;
+    padding: 20px;
+    align-items: center !important;
+    margin: 0 3rem;
+}
+
+main h2 {
+    color: #00688c;
+    text-align: center;
+    font-weight: 100;
+    margin: 1.25rem;
+}
+
+img {
+    min-width: 75%;
 }
 
 .answer {
     width: 50%;
     transition: all 0.5s ease;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #00688c;
+    color: #fff !important;
+    text-align: center !important;
 }
 
 .answer:hover {
     transform: scale(1.1);
     transition: all 0.5s ease;
+    cursor: pointer;
 }
 
-.border-bottom-none {
-    border-bottom: none;
+.answer > b {
+    text-transform: uppercase;
 }

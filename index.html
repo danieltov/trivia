@@ -16,54 +16,43 @@
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="../../../work/uvu/global/css/global.css" />
-        <link
-            rel="stylesheet"
-            href="../../../work/uvu/global/css/helpers.css"
-        />
-        <link
-            rel="stylesheet"
-            href="../../../work/uvu/global/css/component.css"
-        />
         <link rel="stylesheet" href="assets/css/style.css" />
         <link
             href="https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Raleway:400,600,700"
             rel="stylesheet"
         />
     </head>
-    <body class="bg-yellow">
-        <section
-            class="page-header jumbo fullbleed border-bottom-none bg-image"
-        >
-            <div class="container-fluid">
-                <header class="fullbleed-overlay contain text-invert">
-                    <h1
-                        class="text-center text-shadow uppercase font-weight-900 text-rajdhani text-72"
-                    >
-                        Tarantino Trivia
-                    </h1>
-                </header>
-            </div>
-        </section>
-        <div class="margin-60">
-            <div
-                class="box-shadow padding-20 bg-white display-flex flex-column justify-content-center align-items-center"
-                id="question"
-            >
-                <script id="questionTemplate" type="text/x-handlebars-template">
-                    <h2 class="text-center text-blue-6 font-weight-100">
-                        {{question}}
-                    </h2>
-                    {{#each choices}}
-                    <p
-                        class="answer bg-red text-center box-shadow padding-10 rounded-corners"
-                    >
-                        <b class="uppercase">{{@key}}:</b> {{this}}
-                    </p>
-                    {{/each}}
-                </script>
-            </div>
+    <body>
+        <div class="container-fluid">
+            <header>
+                <h1>Tarantino Trivia</h1>
+            </header>
         </div>
+        <h3>Time Left: 30 seconds</h3>
+        <main>
+            <script id="questionTemplate" type="text/x-handlebars-template">
+                <div id="question">
+                      <h2>
+                          {{question}}
+                      </h2>
+                      {{#each choices}}
+                      <p class="answer"><b>{{@key}}</b>: {{this}}</p>
+                      {{/each}}
+                    </div>
+                    <div id="correct" class="d-none">
+                          <h2>
+                              <em>Ooh, that's a bingo!</em>
+                          </h2>
+                          <img src="{{gif}}">
+                    </div>
+                <div id="incorrect" class="d-none">
+                      <h2>
+                          Nope! Your ass may be dumb, but you ain't no dumbass. Try again.
+                      </h2>
+                    <img src="{{wrong}}">
+                    </div>
+            </script>
+        </main>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -72,7 +61,7 @@
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"
         ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.js"></script>
+        <script src="assets/js/handlebars.min.js"></script>
         <script src="assets/js/questions.js"></script>
         <script src="assets/js/game.js"></script>
     </body>

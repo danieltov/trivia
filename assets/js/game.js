@@ -1,70 +1,27 @@
-/*
-Psuedz 
-
-Array of objects. Example object:
-    [{
-        question: 'What is 1+1?',
-        choices: {a: '4', b: '11', c: '3', d: '2'},
-        answer: 'd',
-        gif: 'images/example.gif',
-    }, ..., ..., ...]
-
-Use Handlebars.js to populate the question/multiple choices. Keep track of what question to display with questionIndex. i.e. questionsArray[questionIndex].
-
-Place click listeners on every choice.
-
-Start 30 second timer.
-
-On click, clear timer, and compare choice value to answer value. 
-
-    If match, display correcty answer message and add 1 to `correct` store, if doesn't match, display incorrect answer message and add one to `incorrect` score. Either way, add 1 to questionIndex.
-    (Correct/Incorrect answer messages are Handlebars templates)
-
-After a question is answered, wait 5 seconds and transition to next question
-    Use jQuery to slide up the content and HandlebarsJS to dynamically replace it with the next question. Use jQuery to slide the content down again.
-
-Gameplay:
-game.start();
-    (GAME LOOP)
-        -> game.timer();
-        -> USER CLICKS 
-            -> game.compare();
-                -> game.answerCorrect() || game.answerIncorrect()
-        ->  game.nextQuestion(); 
-    (/GAME LOOP)
-    -> game.end()
-
-Variables:
-
-timer = setInterval(count,1000)
-correct = 0
-incorrect = 0
-questionIndex = 0
-
-*/
-
 let game = {
-    counter: undefined,
-    correct: undefined,
-    incorrect: undefined,
-    questionIndex: undefined,
+    counter: 30,
+    correct: 0,
+    incorrect: 0,
+    questionIndex: 0,
+    source: $('#questionTemplate').html(),
     timer: undefined,
     start: function() {
         this.counter = 30;
         this.correct = 0;
         this.incorrect = 0;
         this.questionIndex = 0;
-        // this.startTimer();
         this.printQuestion(this.questionIndex);
+        this.startTimer();
+        this.gameplay();
     },
     startTimer: function() {
+        $('h3').text(`Time Left: 30 seconds`);
         this.timer = setInterval(function() {
             if (game.counter > 0) {
-                //$('#timer').text(game.countDown());
-                console.log(game.countDown());
+                $('h3').text(`Time Left: ${game.countDown()} seconds`);
             } else {
                 clearInterval(game.timer);
-                game.answerIncorrect();
+                game.incorrectAnswer();
             }
         }, 1000);
     },
@@ -73,13 +30,55 @@ let game = {
         return this.counter;
     },
     printQuestion: function(i) {
-        /* Handlebars stuff */
-        let source = $('#questionTemplate').html();
-        let template = Handlebars.compile(source);
+        let template = Handlebars.compile(game.source);
         let context = trivia[i];
         let html = template(context);
-        $('#question').append(html);
+        $('main').html(html);
+    },
+    gameplay: function() {
+        $('.answer').on('click', function() {
+            clearInterval(game.timer);
+            game.counter = 30;
+            game.compareAnswer($(this)[0].innerText[0].toLowerCase());
+        });
+    },
+    compareAnswer: function(x) {
+        if (x !== trivia[this.questionIndex].answer) {
+            this.incorrectAnswer();
+        } else {
+            this.correctAnswer();
+        }
+    },
+    correctAnswer: function() {
+        this.correct++;
+        this.questionIndex++;
+        $('#question').addClass('d-none');
+        $('#correct').removeClass('d-none');
+        this.timer = setTimeout(this.nextQuestion, 4000);
+    },
+    incorrectAnswer: function() {
+        this.incorrect++;
+        this.questionIndex++;
+        $('#question').addClass('d-none');
+        $('#incorrect').removeClass('d-none');
+        setTimeout(this.nextQuestion, 4000);
+    },
+    nextQuestion: function() {
+        if (game.questionIndex < 10) {
+            game.printQuestion(game.questionIndex);
+            game.startTimer();
+            game.gameplay();
+        } else {
+            $('h3').text(`Thanks For Playing!`);
+            $('main').html(
+                `<div style="background: #00688c;"><h3>That's the end of the game. You got ${
+                    game.correct
+                } questions correct and ${game.incorrect} incorrect.</h3></div>`
+            );
+        }
     }
 };
 
-game.start();
+$(function() {
+    game.start();
+});

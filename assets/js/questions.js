@@ -8,8 +8,9 @@ let trivia = [
             d: `Stylized violence`
         },
         answer: `c`,
-        gif: `/assets/images/leocheer.gif`,
-        wrong: `/assets/images/wrong1.gif`
+        gif: `assets/images/leocheer.gif`,
+        wrong: `assets/images/wrong1.gif`,
+        colors: ['red', 'gold', 'teal', 'purple']
     },
     {
         question: `What independent film that was directed, written, and acted in by Quentin Tarantino and was his first commercial success in 1992? `,
@@ -20,11 +21,11 @@ let trivia = [
             d: `Reservoir Dogs`
         },
         answer: `d`,
-        gif: `/assets/images/reservoirwink.gif`,
-        wrong: `/assets/images/wrong2.gif`
+        gif: `assets/images/reservoirwink.gif`,
+        wrong: `assets/images/wrong2.gif`
     },
     {
-        question: `Quentin Tarantino experiments with many genres of film. What genre did he pay homage with his 1995 film "Jackie Brown"?`,
+        question: `Quentin Tarantino experiments with many genres of film. What genre did he pay homage to with his 1995 film "Jackie Brown"?`,
         choices: {
             a: `Blaxploitation`,
             b: `Science fiction`,
@@ -32,8 +33,8 @@ let trivia = [
             d: `Costume drama`
         },
         answer: `a`,
-        gif: `/assets/images/jackie-brown.gif`,
-        wrong: `/assets/images/wrong3.gif`
+        gif: `assets/images/jackie-brown.gif`,
+        wrong: `assets/images/wrong3.gif`
     },
     {
         question: `"Kill Bill" was released in two 'volumes' in 2003-04 due to its four hour running time. "The Bride" or "Black Mamba", portrayed by Uma Thurman, pursues "Bill" (David Carradine) to kill him. How does she accomplish this task? `,
@@ -44,8 +45,8 @@ let trivia = [
             d: `Breaks his neck with a Okinawan numchuck`
         },
         answer: `b`,
-        gif: `/assets/images/killbill-explodingheart.gif`,
-        wrong: `/assets/images/wrong4.gif`
+        gif: `assets/images/killbill-explodingheart.gif`,
+        wrong: `assets/images/wrong4.gif`
     },
     {
         question: `According to history Hitler died by suicide at a Berlin bunker. According to Quentin Tarantino in "Inglourious Basterds", how did he meet his demise?`,
@@ -56,8 +57,8 @@ let trivia = [
             d: `Strangled by Mussolini in an argument`
         },
         answer: `b`,
-        gif: `/assets/images/hitler.gif`,
-        gif: `/assets/images/wrong5.gif`
+        gif: `assets/images/hitler.gif`,
+        wrong: `assets/images/wrong5.gif`
     },
     {
         question: `Tarantino teamed with fellow director Robert Rodriguez to film a double feature that they called a __________ movie. `,
@@ -68,8 +69,8 @@ let trivia = [
             d: `pastiche`
         },
         answer: `c`,
-        gif: `/assets/images/grindhouse.gif`,
-        wrong: `/assets/images/wrong6.gif`
+        gif: `assets/images/grindhouse.gif`,
+        wrong: `assets/images/wrong6.gif`
     },
     {
         question: `What actor/actress received a pair of Academy Awards for appearing in two consecutive Quentin Tarantino films?`,
@@ -80,8 +81,8 @@ let trivia = [
             d: `Christoph Waltz`
         },
         answer: `d`,
-        gif: `/assets/images/bingo.gif`,
-        wrong: `/assets/images/wrong7.gif`
+        gif: `assets/images/bingo.gif`,
+        wrong: `assets/images/wrong7.gif`
     },
     {
         question: `In "Pulp Fiction", who shot Marvin in the face?`,
@@ -92,8 +93,8 @@ let trivia = [
             d: `Mia Wallace`
         },
         answer: `b`,
-        gif: `/assets/images/pf-marvin.gif`,
-        wrong: `/assets/images/wrong8.gif`
+        gif: `assets/images/pf-marvin.gif`,
+        wrong: `assets/images/wrong8.gif`
     },
     {
         question: `What two Tarantino movies are connected because of the Vega brothers, Vince and Vic?`,
@@ -104,8 +105,8 @@ let trivia = [
             d: `"From Dusk Till Dawn" and "True Romance"`
         },
         answer: `a`,
-        gif: `/assets/images/vincentvega.gif`,
-        wrong: `/assets/images/wrong9.gif`
+        gif: `assets/images/vincentvega.gif`,
+        wrong: `assets/images/wrong9.gif`
     },
     {
         question: `Which Tarantino movie does Daryl Hannah appear in, where she uses a snake to kill someone?`,
@@ -116,7 +117,7 @@ let trivia = [
             d: `Pulp Fiction`
         },
         answer: `c`,
-        gif: `/assets/images/darylhannah.gif`,
-        wrong: `/assets/images/wrong10.gif`
+        gif: `assets/images/darylhannah.gif`,
+        wrong: `assets/images/wrong10.gif`
     }
 ];
