@@ -37,7 +37,6 @@ let game = {
     },
     gameplay: function() {
         $('.answer').on('click', function() {
-            clearInterval(game.timer);
             game.counter = 30;
             game.compareAnswer($(this)[0].innerText[0].toLowerCase());
         });
@@ -65,6 +64,7 @@ let game = {
     },
     nextQuestion: function() {
         if (game.questionIndex < 10) {
+            game.counter = 30;
             game.printQuestion(game.questionIndex);
             game.startTimer();
             game.gameplay();
