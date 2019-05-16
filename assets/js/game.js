@@ -53,6 +53,7 @@ let game = {
         this.questionIndex++;
         $('#question').addClass('d-none');
         $('#correct').removeClass('d-none');
+        clearInterval(game.timer);
         this.timer = setTimeout(this.nextQuestion, 4000);
     },
     incorrectAnswer: function() {
@@ -60,6 +61,7 @@ let game = {
         this.questionIndex++;
         $('#question').addClass('d-none');
         $('#incorrect').removeClass('d-none');
+        clearInterval(game.timer);
         setTimeout(this.nextQuestion, 4000);
     },
     nextQuestion: function() {
